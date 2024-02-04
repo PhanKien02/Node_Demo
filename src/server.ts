@@ -5,8 +5,7 @@ import cors from 'cors';
 import connectionDatabase from "./config/sequelize";
 import router from "./routers";
 import dotenv from "dotenv"
-
-
+require('express-async-errors');
 const start = async () => {
 
   const app = express();
