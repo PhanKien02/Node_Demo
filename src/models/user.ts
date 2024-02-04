@@ -33,9 +33,6 @@ class User extends Model<IUser> {
   @Column({
     type: DataType.STRING,
     allowNull: false,
-    validate: {
-      IsEmail: true
-    }
   })
   email: string;
 
@@ -44,7 +41,7 @@ class User extends Model<IUser> {
     type: DataType.STRING,
     allowNull: true,
     validate: {
-      is: '[0-9]{3}-[0-9]{3}-[0-9]{4}'
+      is: '[0-9]{10}'
     }
   })
   phone: string;
@@ -72,6 +69,17 @@ class User extends Model<IUser> {
     allowNull: true
   })
   avatar?: string
+  @Column({
+    type: DataType.STRING,
+    allowNull: true
+  })
+  active?: string
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: true
+  })
+  activeKey?: string
 }
 
 export default User;
