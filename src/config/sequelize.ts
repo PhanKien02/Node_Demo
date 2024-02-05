@@ -4,7 +4,7 @@ import Post from "../models/post"
 import dotenv from 'dotenv';
 dotenv.config();
 
-const connectionDatabase = new Sequelize({
+const sequelize = new Sequelize({
   dialect: "mysql",
   host: process.env.DB_HOST,
   username: process.env.DB_USERNAME,
@@ -15,4 +15,4 @@ const connectionDatabase = new Sequelize({
   repositoryMode: true,
 })
 
-export default connectionDatabase 
+export default sequelize 
