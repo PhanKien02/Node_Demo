@@ -11,8 +11,8 @@ const registerUser = async (req: Request, res: Response) => {
 const activeUser = async (req: Request, res: Response) => {
   const idUser = BigInt(req.params.id);
   const activeKey = req.body.activeKey
-  const result = await userService.activeUser(idUser, activeKey);
-  res.status(StatusCodes.OK).send(response(result));
+  await userService.activeUser(idUser, activeKey);
+  res.status(StatusCodes.OK).send(response("active user success"));
 }
 export {
   registerUser,
