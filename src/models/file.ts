@@ -1,11 +1,10 @@
-import { Table, Column, Model, PrimaryKey, AutoIncrement, NotNull, IsEmail, Min, Max, Length, ForeignKey, DataType } from 'sequelize-typescript';
-import { IPost } from '../interfaces/IPost';
+import { Table, Column, Model, PrimaryKey, AutoIncrement,DataType } from 'sequelize-typescript';
+import { IFile } from '../interfaces/IFile';
 
 
 @Table
-class Post extends Model<IPost> {
+class File extends Model<IFile> {
 
-  @NotNull
   @AutoIncrement
   @PrimaryKey
   @Column({
@@ -14,36 +13,33 @@ class Post extends Model<IPost> {
   })
   id: bigint;
 
-  @NotNull
   @Column({
     type: DataType.STRING,
     allowNull: false
   })
   path!: string;
-  @NotNull
   @Column
 
-  @NotNull
   @Column({
     type: DataType.STRING,
     allowNull: false
   })
-  fullPath!: string;
+  servicePath!: string;
 
   @Column
-  @NotNull
   @Column({
     type: DataType.STRING,
     allowNull: true
   })
   size: string;
 
-  @NotNull
   @Column({
     type: DataType.STRING,
     allowNull: true
   })
   name: string;
+
+  typeFIle : number
 }
 
-export default Post;
+export default File;
