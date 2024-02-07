@@ -1,4 +1,4 @@
-import { Table, Column, Model, PrimaryKey, AutoIncrement,DataType } from 'sequelize-typescript';
+import { Table, Column, Model, PrimaryKey, AutoIncrement, DataType } from 'sequelize-typescript';
 import { IFile } from '../interfaces/IFile';
 
 
@@ -17,21 +17,18 @@ class File extends Model<IFile> {
     type: DataType.STRING,
     allowNull: false
   })
-  path!: string;
-  @Column
+  path: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: false
   })
-  servicePath!: string;
+  servicePath: string;
 
-  @Column
   @Column({
-    type: DataType.STRING,
-    allowNull: true
+    type: DataType.INTEGER,
   })
-  size: string;
+  size: number;
 
   @Column({
     type: DataType.STRING,
@@ -39,7 +36,11 @@ class File extends Model<IFile> {
   })
   name: string;
 
-  typeFIle : number
+  @Column({
+    type: DataType.STRING,
+    allowNull: true
+  })
+  typeFile: string
 }
 
 export default File;

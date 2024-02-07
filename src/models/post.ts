@@ -17,12 +17,12 @@ class Post extends Model<IPost> {
     type: DataType.STRING,
     allowNull: false
   })
-  title!: string;
+  title: string;
   @Column({
     type: DataType.STRING,
     allowNull: false
   })
-  content!: string;
+  content: string;
 
   @Column({
     type: DataType.STRING,
