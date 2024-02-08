@@ -14,6 +14,7 @@ app.use(
   })
 );
 app.use(morgan('dev'))
+app.use('/export', express.static('./src/public/images'));
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(bodyParser.text())

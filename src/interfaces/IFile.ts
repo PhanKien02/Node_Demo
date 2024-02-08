@@ -1,8 +1,8 @@
 export interface IFile {
-  id: bigint;
+  id?: bigint;
   path: string;
-  fullPath: string;
-  size: string;
+  servicePath: string;
+  size: number;
   name: string;
-  typeFile : string;
+  typeFile: string;
 }
