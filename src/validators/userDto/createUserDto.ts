@@ -18,15 +18,4 @@ export class UserCreateDto {
   @IsEmail({}, { message: "Email invalidate" })
   @IsNotEmpty({ message: "email is require" })
   email: string;
-
-  @Length(10, 10, { message: "Phone invalidate" })
-  @IsNotEmpty({ message: "phone is require" })
-  phone: string;
-
-  age?: string;
-
-  address?: string;
-
-  sex?: boolean;
-
 }

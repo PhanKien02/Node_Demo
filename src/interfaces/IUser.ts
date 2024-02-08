@@ -5,9 +5,9 @@ export interface IUser {
   password?: string;
   email?: string;
   phone?: string;
-  age?: string;
+  age?: number;
   address?: string;
-  sex?: boolean; // 1 => made 0 => femade 
+  gender?: boolean; // 1 => made 0 => femade 
   avatar?: string;
   active?: boolean;
   activeKey?: string;

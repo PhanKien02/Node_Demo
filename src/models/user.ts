@@ -23,16 +23,18 @@ class User extends Model<IUser> {
     allowNull: false
   })
   userName: string;
+
   @Column({
     type: DataType.STRING,
     allowNull: false
   })
   password: string;
-  @IsEmail
 
+  @IsEmail
   @Column({
     type: DataType.STRING,
     allowNull: false,
+    unique: true
   })
   email: string;
 
@@ -40,6 +42,7 @@ class User extends Model<IUser> {
   @Column({
     type: DataType.STRING,
     allowNull: true,
+    unique: true,
     validate: {
       is: '[0-9]{10}'
     }
@@ -62,13 +65,14 @@ class User extends Model<IUser> {
     type: DataType.BOOLEAN,
     allowNull: true
   })
-  sex: boolean; // 1 => made 0 => femade 
+  gender: boolean; // true => made false => femade 
 
   @Column({
     type: DataType.STRING,
     allowNull: true
   })
   avatar?: string
+
   @Column({
     type: DataType.BOOLEAN,
     allowNull: true
