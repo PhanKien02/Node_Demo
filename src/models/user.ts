@@ -70,10 +70,10 @@ class User extends Model<IUser> {
   })
   avatar?: string
   @Column({
-    type: DataType.STRING,
+    type: DataType.BOOLEAN,
     allowNull: true
   })
-  active?: string
+  active?: boolean
 
   @Column({
     type: DataType.STRING,
