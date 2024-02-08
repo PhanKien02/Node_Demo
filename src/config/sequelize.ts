@@ -2,6 +2,7 @@ import { Sequelize } from "sequelize-typescript"
 import User from "../models/user"
 import Post from "../models/post"
 import dotenv from 'dotenv';
+import File from "../models/file";
 dotenv.config();
 
 const sequelize = new Sequelize({
@@ -11,7 +12,7 @@ const sequelize = new Sequelize({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   logging: false,
-  models: [User, Post],
+  models: [User, Post, File],
   repositoryMode: true,
 })
 

@@ -4,4 +4,5 @@ export interface IFile {
   fullPath: string;
   size: string;
   name: string;
+  typeFile : string;
 }
