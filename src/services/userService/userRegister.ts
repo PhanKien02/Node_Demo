@@ -20,10 +20,6 @@ const userRegister = async (newUser: UserCreateDto) => {
     userName: newUser.userName,
     password: password,
     email: newUser.email,
-    phone: newUser.phone,
-    age: newUser.age,
-    address: newUser.address,
-    sex: newUser.sex,
     active: false,
     activeKey: activeKey,
   }

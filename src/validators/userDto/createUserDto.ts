@@ -1,3 +1,4 @@
+import { Transform } from "class-transformer";
 import { IsEmail, IsNotEmpty, IsString, Length } from "class-validator";
 
 export class UserCreateDto {
@@ -8,21 +9,13 @@ export class UserCreateDto {
 
   @IsNotEmpty({ message: "userName is require" })
   userName: string;
+
+  @Length(6, 20)
+  @Transform(({ value }) => value.trim())
   @IsNotEmpty({ message: "password is require" })
   password: string;
 
   @IsEmail({}, { message: "Email invalidate" })
   @IsNotEmpty({ message: "email is require" })
   email: string;
-
-  @Length(10, 10, { message: "Phone invalidate" })
-  @IsNotEmpty({ message: "phone is require" })
-  phone: string;
-
-  age?: string;
-
-  address?: string;
-
-  sex?: boolean;
-
 }

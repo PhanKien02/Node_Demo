@@ -13,8 +13,22 @@ const checkExistsUser = async (email: string, userName: string): Promise<User> =
     }
   })
 }
-
+const login = async (emailOrUserName: string): Promise<User> => {
+  return await repository.findOne({
+    where: {
+      [Op.and]: [
+        {
+          [Op.or]: [
+            { email: emailOrUserName },
+            { userName: emailOrUserName }
+          ]
+        }
+      ]
+    }
+  })
+}
 export default {
   repository,
-  checkExistsUser
+  checkExistsUser,
+  login
 }
