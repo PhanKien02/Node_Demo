@@ -1,5 +1,6 @@
-import { Table, Column, Model, PrimaryKey, AutoIncrement, NotNull, IsEmail, Min, Max, Length, ForeignKey, DataType } from 'sequelize-typescript';
+import { Table, Column, Model, PrimaryKey, AutoIncrement, DataType, HasMany } from 'sequelize-typescript';
 import { IPost } from '../interfaces/IPost';
+import File from './file';
 
 
 @Table
@@ -30,11 +31,8 @@ class Post extends Model<IPost> {
   })
   source: string;
 
-  @Column({
-    type: DataType.STRING,
-    allowNull: true
-  })
-  thumnail: string;
+  @HasMany(() => File, "postId")
+  thumnail: File[];
 }
 
 export default Post;

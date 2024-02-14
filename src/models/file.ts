@@ -1,5 +1,6 @@
-import { Table, Column, Model, PrimaryKey, AutoIncrement, DataType } from 'sequelize-typescript';
+import { Table, Column, Model, PrimaryKey, AutoIncrement, DataType, BelongsTo } from 'sequelize-typescript';
 import { IFile } from '../interfaces/IFile';
+import Post from './post';
 
 
 @Table
@@ -41,6 +42,8 @@ class File extends Model<IFile> {
     allowNull: true
   })
   typeFile: string
+  @BelongsTo(() => Post, "postId")
+  post: Post;
 }
 
 export default File;

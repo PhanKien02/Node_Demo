@@ -1,3 +1,5 @@
+import { IPost } from "./IPost";
+
 export interface IFile {
   id?: bigint;
   path: string;
@@ -5,4 +7,5 @@ export interface IFile {
   size: number;
   name: string;
   typeFile: string;
+  post: IPost;
 }
