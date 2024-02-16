@@ -15,10 +15,7 @@ export const uploadFileService = async (files: Express.Multer.File[]) => {
     }
   })
   try {
-    fileUploads.forEach(async (file) => {
-      await fileRepository.repository.create(file)
-    });
-    return fileUploads;
+    return await fileRepository.repository.bulkCreate(fileUploads);
   } catch (error) {
     throw new ApiError(StatusCodes.BAD_REQUEST, "upload images failed")
   }
