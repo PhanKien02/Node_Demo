@@ -3,7 +3,6 @@ import userService from "../services/userService";
 import { StatusCodes } from "http-status-codes";
 import response from '../utils/response';
 import { loginService } from "../services/userService/login";
-import { IUser } from "../interfaces/IUser";
 import { UserUpdateDto } from "../validators/userDto/updateUserDto";
 
 const registerUser = async (req: Request, res: Response) => {
