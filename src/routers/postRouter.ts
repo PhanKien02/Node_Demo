@@ -6,8 +6,11 @@ import { postCreateDto } from "../validators/postDto/createPostDto";
 import multer from "multer";
 import { fileFilter, fileStorage, limit } from "../middleware/uploadMiddleware";
 import { postUpdateDto } from "../validators/postDto/updatePostDto";
+import { authMiddleware } from "../middleware/authMiddleware";
 
 const router = Router();
+
+router.use(authMiddleware);
 
 router.get("/", catchAsync(getAllPost))
 

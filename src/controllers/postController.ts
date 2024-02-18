@@ -17,25 +17,21 @@ const createPost = async (req: Request, res: Response) => {
   const result = await postService.createPostService(post);
   return res.status(StatusCodes.OK).send(response(result));
 }
-
 const updatePost = async (req: Request, res: Response) => {
   const post: postUpdateDto = req['Dto'];
   const result = await postService.updatePostService(post);
   return res.status(StatusCodes.OK).send(response(result));
 }
-
 const getPostById = async (req: Request, res: Response) => {
   const postId = +req.params.id;
   const result = await postService.getPostById(postId)
   return res.status(StatusCodes.OK).send(response(result));
 }
-
 const deletePost = async (req: Request, res: Response) => {
   const postId = +req.params.id;
   await postService.deletePost(postId)
   return res.status(StatusCodes.OK).send(response("delete post success"));
 }
-
 export {
   createPost,
   getAllPost,

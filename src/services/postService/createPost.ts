@@ -1,8 +1,11 @@
+import { StatusCodes } from "http-status-codes";
+import sequelize from "../../config/sequelize";
 import { IFile } from "../../interfaces/IFile";
 import File from "../../models/file";
 import Post from "../../models/post";
 import fileRepository from "../../repository/fileRepository";
 import postRepository from "../../repository/postRepository";
+import { ApiError } from "../../utils/apiError";
 import { postCreateDto } from "../../validators/postDto/createPostDto";
 
 export const createPostService = async (postDto: postCreateDto) => {
@@ -15,17 +18,20 @@ export const createPostService = async (postDto: postCreateDto) => {
       typeFile: file.mimetype,
     }
   })
+  const t = await sequelize.transaction();
   try {
-    return await postRepository.repository.create({
+    const newpost = await postRepository.repository.create({
       title: postDto.title,
       content: postDto.content,
       source: postDto.source,
       thumnails: thumnails
     }, {
       include: [{ model: fileRepository.repository, as: "thumnails", association: "thumnails" }],
+      transaction: t
     })
+    await t.commit();
+    return newpost;
   } catch (error) {
-    console.log("err", error);
-
+    throw new ApiError(StatusCodes.BAD_REQUEST, "create post failed")
   }
 }
