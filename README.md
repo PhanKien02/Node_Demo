@@ -15,4 +15,4 @@
 
 # file postman
 
-- [postman](https://github.com/PhanKien02/Node_Demo/blob/Node_Demo.postman.json)
+- [postman](https://github.com/PhanKien02/Node_Demo/blob/main/Node_Demo.postman.json)
