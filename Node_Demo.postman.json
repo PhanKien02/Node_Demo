@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "4089cdac-6742-4d49-94c8-b8dcea55b061",
+		"name": "Node_Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20775021"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\" : \"abc\",\r\n    \"userName\" :\"abc\",\r\n    \"password\" : \"123\",\r\n    \"email\" :\"abc1@gmail.com\",\r\n    \"phone\" :\"0982937641\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "active user",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailOrUserName\":\"admin@zslsz.com\",\r\n    \"password\":\"123f4543\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"fullName\" : \"abcds\",\r\n    \"userName\" :\"aw11wsbqwqc3w2e2\",\r\n    \"email\" :\"ujm375773@zslsz.com\",\r\n    \"phone\" :\"0982937641\",\r\n    \"age\" :18,\r\n    \"gender\" : false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "File",
+			"item": [
+				{
+					"name": "upload File",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1eec5b7d-a283-4820-94aa-5f5a92bf31f6"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/file/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"file",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "update post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "title 1234",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "content53",
+									"type": "text"
+								},
+								{
+									"key": "source",
+									"value": "phan kien5",
+									"type": "text"
+								},
+								{
+									"key": "thumnails",
+									"type": "file",
+									"src": [
+										"postman-cloud:///1eec6437-9d6c-41d0-88e7-1de37afcc0fa",
+										"postman-cloud:///1eec5b7d-a283-4820-94aa-5f5a92bf31f6",
+										"/D:/image/5073414.jpg"
+									]
+								},
+								{
+									"key": "id",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "title 1234",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "content53",
+									"type": "text"
+								},
+								{
+									"key": "source",
+									"value": "phan kien5",
+									"type": "text"
+								},
+								{
+									"key": "thumnails",
+									"type": "file",
+									"src": [
+										"postman-cloud:///1eec6437-9d6c-41d0-88e7-1de37afcc0fa",
+										"postman-cloud:///1eec5b7d-a283-4820-94aa-5f5a92bf31f6",
+										"/D:/image/5073414.jpg"
+									]
+								},
+								{
+									"key": "id",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/post/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"post",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/post/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"post",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZU5hbWVzIjoidXNlciIsImlhdCI6MTcwODM2NDI4MywiZXhwIjoxNzA4MzY3ODgzfQ.-fJMEGv8SjIqFg9z9dX1tprtLslTDR5S46W2m1Dzo2I",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
