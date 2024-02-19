@@ -12,7 +12,7 @@ class File extends Model<IFile> {
     type: DataType.BIGINT,
     allowNull: false
   })
-  id: bigint;
+  id?: bigint;
 
   @Column({
     type: DataType.STRING,
@@ -43,7 +43,7 @@ class File extends Model<IFile> {
   })
   typeFile: string
   @BelongsTo(() => Post, "postId")
-  post: Post;
+  post?: Post;
 }
 
 export default File;

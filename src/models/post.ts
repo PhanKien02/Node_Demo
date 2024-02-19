@@ -32,7 +32,7 @@ class Post extends Model<IPost> {
   source: string;
 
   @HasMany(() => File, "postId")
-  thumnail: File[];
+  thumnails: File[];
 }
 
 export default Post;

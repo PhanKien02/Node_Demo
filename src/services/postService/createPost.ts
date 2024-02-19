@@ -29,9 +29,13 @@ export const createPostService = async (postDto: postCreateDto) => {
       include: [{ model: fileRepository.repository, as: "thumnails", association: "thumnails" }],
       transaction: t
     })
+
     await t.commit();
     return newpost;
   } catch (error) {
+
+    console.log(error);
+    await t.rollback();
     throw new ApiError(StatusCodes.BAD_REQUEST, "create post failed")
   }
 }
