@@ -27,6 +27,7 @@ export const createPostService = async (postDto: postCreateDto) => {
       include: [{ model: fileRepository.repository, as: "thumnails", association: "thumnails" }],
       transaction: t
     })
+
     await t.commit();
     return newpost;
   } catch (error) {

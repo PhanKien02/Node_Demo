@@ -12,7 +12,7 @@ class File extends Model<IFile> {
     type: DataType.BIGINT,
     allowNull: false
   })
-  id: bigint;
+  id?: bigint;
 
   @Column({
     type: DataType.STRING,

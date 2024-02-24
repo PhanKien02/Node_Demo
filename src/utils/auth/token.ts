@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
-require('dotenv').config()
+
 export const generateAccessToken = (id: bigint, roleNames: string): string => {
-  return jwt.sign({ id, roleNames }, process.env.JWT_ACCESS_SECRET, { expiresIn: "2600s" });
+  return jwt.sign({ id, roleNames }, process.env.JWT_ACCESS_SECRET, { expiresIn: "3600s" });
 }
 
 export const generateRefreshToken = (id: bigint, roleNames: string): string => {
