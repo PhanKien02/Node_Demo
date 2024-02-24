@@ -19,6 +19,8 @@ const createPost = async (req: Request, res: Response) => {
 }
 const updatePost = async (req: Request, res: Response) => {
   const post: postUpdateDto = req['Dto'];
+  const thumnails = req.files as Express.Multer.File[];
+  thumnails ? post.thumnails = thumnails : null
   const result = await postService.updatePostService(post);
   return res.status(StatusCodes.OK).send(response(result));
 }

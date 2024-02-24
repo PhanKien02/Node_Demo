@@ -22,7 +22,11 @@ router.post("/", multer({
   limits: limit
 }).any(), validateMiddlewares(postCreateDto), catchAsync(createPost))
 
-router.put("/", validateMiddlewares(postUpdateDto), catchAsync(updatePost))
+router.put("/", multer({
+  storage: fileStorage,
+  fileFilter: fileFilter,
+  limits: limit
+}).any(), validateMiddlewares(postUpdateDto), catchAsync(updatePost))
 
 router.delete("/:id", catchAsync(deletePost))
 

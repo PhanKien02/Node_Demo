@@ -7,5 +7,5 @@ export interface IFile {
   size: number;
   name: string;
   typeFile: string;
-  post?: IPost;
+  postId?: bigint;
 }
