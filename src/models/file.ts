@@ -43,7 +43,7 @@ class File extends Model<IFile> {
   })
   typeFile: string
   @BelongsTo(() => Post, "postId")
-  post?: Post;
+  post: bigint;
 }
 
 export default File;

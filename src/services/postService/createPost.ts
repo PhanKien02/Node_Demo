@@ -1,8 +1,6 @@
 import { StatusCodes } from "http-status-codes";
 import sequelize from "../../config/sequelize";
 import { IFile } from "../../interfaces/IFile";
-import File from "../../models/file";
-import Post from "../../models/post";
 import fileRepository from "../../repository/fileRepository";
 import postRepository from "../../repository/postRepository";
 import { ApiError } from "../../utils/apiError";
@@ -33,8 +31,6 @@ export const createPostService = async (postDto: postCreateDto) => {
     await t.commit();
     return newpost;
   } catch (error) {
-
-    console.log(error);
     await t.rollback();
     throw new ApiError(StatusCodes.BAD_REQUEST, "create post failed")
   }
