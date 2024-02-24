@@ -6,7 +6,7 @@ export const authMiddleware = (req: Request, res: Response, next: NextFunction) 
     res.status(401).json();
   } else {
     const accessToken = token.split(" ")[1];
-    const decoded = jwt.verify(accessToken, process.env.ACCESS_SECRET);
+    const decoded = jwt.verify(accessToken, process.env.JWT_ACCESS_SECRET);
     req["user"] = decoded['id'];
     next();
   }
